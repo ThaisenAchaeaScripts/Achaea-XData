@@ -14,14 +14,19 @@ Modeules
 - defenses
 
 
-xdata comms
+
+**xdata comms**
 - Event raised when a new communication is recieved.
 - ARG1 is a table containing information about the communcation.
 
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
+```lua
+Event: xdata comms
+{
+  ansi = '\27[38;5;014;48;5;237mYour breath sizzles as you say, "Hello."\27[0;37m',
+  channel = "says",
+  epoch = 1636315829.326,
+  talker = "Thaisen",
+  text = 'Your breath sizzles as you say, "Hello."',
+  time = "11/07/21 20:10:29"
 }
 ```
