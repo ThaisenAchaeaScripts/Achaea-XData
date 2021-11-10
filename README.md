@@ -1,13 +1,13 @@
 # Achaea-XData
 
-XData is a mudlet package to make it easier to consume Achaea GMCP data by maintaining local variables and raising additional events.
+XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by maintaining local variables and raising additional events.
 
 Modeules
 - afflictions
   - [xdata afflictions](#xdata_afflictions)
   - [xdata afflictions gain](#xdata_afflictions_gain)
-  - xdata afflictions lost
-  - xdata afflictions miss
+  - [xdata afflictions lost](#xdata_afflictions_lost)
+  - [xdata afflictions miss](#xdata_afflictions_miss)
 
 
 ---
@@ -34,7 +34,7 @@ Event: xdata afflictions gain
 "paralysis"
 ```
 
-**xdata afflictions lost**
+<a name="xdata_afflictions_lost">**xdata afflictions lost**</a>
 - Event raised whenever an affliction is lost
 - ARG1 is the name of the affliction
 - ARG2 is the time in seconds since the affliction was initially gained
@@ -45,7 +45,7 @@ Event: xdata afflictions lost
 4.0320000648499
 ```
 
-**xdata affliction miss**
+<a name="xdata_afflictions_miss">**xdata afflictions miss**</a>
 - Event raised whenever an affliction is cured that xdata didn't already know about
 - ARG1 is the name of the affliction
 - xdata afflictions lost is always raised at the same time
