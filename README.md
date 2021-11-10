@@ -7,28 +7,42 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata afflictions gain](#xdata_afflictions_gain)
   - [xdata afflictions lost](#xdata_afflictions_lost)
   - [xdata afflictions miss](#xdata_afflictions_miss)
+
 - comms
   - [xdata comms](#xdata_comms)
+
 - defences
   - [xdata defences](#xdata_defences)
   - [xdata defences gain](#xdata_defences_gain)
   - [xdata defences lost](#xdata_defences_lost)
+
 - items
   - [xdata items](#xdata_items)
   - [xdata items add](#xdata_items_add)
   - [xdata items remove](#xdata_items_remove)
   - [xdata items update](#xdata_items_update)
+
 - players
   - [xdata players](#xdata_players)
   - [xdata players add](#xdata_players_add)
   - [xdata players remove](#xdata_players_remove)
+
 - rift
   - [xdata rift](#xdata_rift)
   - [xdata rift change](#xdata_rift_change)
+
 - room
   - [xdata room](#xdata_room)
+
 - status
   - [xdata status](#xdata_status)
+
+- time
+  - [xdata time](#xdata_time)
+  - [xdata time dawn](#xdata_time_dawn)
+  - [xdata time noon](#xdata_time_noon)
+  - [xdata time dusk](#xdata_time_dusk)
+  - [xdata time midnight](#xdata_time_midnight)
  
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
@@ -416,4 +430,61 @@ Differences from GMCP
 
 ---
 
+<a name="xdata_time">**xdata time**</a>
+- Event raised when time is updated
+- XData requests the time from the server every minute
+- ARG1 is the contents of xdata.time
+- xdata.time is a table contining information about the current date and time
+
+```lua
+Event: xdata time
+{
+  day = 17,
+  daynight = 93,
+  epoch = 1636567929.65,
+  hour = 43,
+  mon = 3,
+  month = "Aeguary",
+  moonphase = "Waxing Gibbous",
+  rltime = "11/10/21 18:12:09",
+  time = "The shadows have lengthened. It is late afternoon in Achaea.",
+  year = 873
+}
+```
+Differences from GMCP
+- epoch is Unix time
+- rltime is real world UTC time
+
+<a name="xdata_time_dawn">**xdata time dawn**</a>
+- Event raised when it is dawn
+- No arguments
+```lua
+Event: xdata time dawn
+```
+
+
+<a name="xdata_time_noon">**xdata time noon**</a>
+- Event raised when it is noon
+- No arguments
+```lua
+Event: xdata time noon
+```
+
+
+<a name="xdata_time_dusk">**xdata time dusk**</a>
+- Event raised when it is dusk
+- No arguments
+```lua
+Event: xdata time dusk
+```
+
+
+<a name="xdata_time_dawn">**xdata time midnight**</a>
+- Event raised when it is midnight
+- No arguments
+```lua
+Event: xdata time midnight
+```
+
+---
 
