@@ -2,7 +2,6 @@
 
 XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by maintaining local variables and raising additional events.
 
-Modeules
 - afflictions
   - [xdata afflictions](#xdata_afflictions)
   - [xdata afflictions gain](#xdata_afflictions_gain)
