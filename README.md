@@ -3,21 +3,35 @@
 XData is a mudlet package to make it easier to consume Achaea GMCP data by maintaining local variables and raising additional events.
 
 Modeules
-- comms
-- status
-- vitals
-- room
-- players
-- items
-- time
 - afflictions
-- defenses
+
+
+---
+**xdata afflictions**
+- Event raised whenever the Achaea affliction list is recieved on diagnose.
+- ARG1 contains xdata.afflications
+
+```lua
+Event: xdata afflictions
+{
+  blindness = 1636558699.754,
+  deafness = 1636558699.754,
+  paralysis = 1636558699.754
+}
+```
 
 
 ---
 **xdata comms**
 - Event raised when a new communication is recieved.
-- ARG1 is a table containing information about the communcation.
+- ARG1 contins xdata.comms
+- Variables
+  - ansi: The communication with ANSI color codes, can be used with ansi2deco function in mudlet.
+  - channel: The communication channel the message was sent on. ('says','tells','city','house','order',ect)
+  - epoch: The unix time that the communction was recieved.
+  - talker: The person who sent the message.
+  - text: The text of the message with ANSI color codes removed.
+  - time: The UTC time that the message was sent.
 
 ```lua
 Event: xdata comms
