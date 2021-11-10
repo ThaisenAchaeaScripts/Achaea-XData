@@ -13,7 +13,15 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata defences](#xdata_defences)
   - [xdata defences gain](#xdata_defences_gain)
   - [xdata defences lost](#xdata_defences_lost)
-
+- items
+  - [xdata items inv](#xdata_items_inv)
+  - [xdata items room](#xdata_items_room)
+  - [xdata items denizens](#xdata_items_denizens)
+  - [xdata items repXXX](#xdata_items_repXXX)
+  - [xdata items add](#xdata_items_add)
+  - [xdata items remove](#xdata_items_remove)
+  - [xdata items update](#xdata_items_update)
+ 
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
 - Event raised whenever the Achaea affliction list is recieved on diagnose.
@@ -117,3 +125,66 @@ Event: xdata defences gain
 Event: xdata defences lost
 "softfocusing"
 ```
+
+---
+
+<a name="xdata_items">**xdata items**</a>
+- Event raised whenever an items list is changed
+- ARG1 is the location, possible values are 'inv','room','denizens', or 'repXXX' (repXXX is a container where XXX is the container id)
+- ARG2 is the table of items where the key is the item id and value is a table of information about the item.
+- Tables are stored in xdata.items.LOCATION (e.g. xdata.items.inv or xdata.items.denizens)
+
+```lua
+Event: xdata items
+"room"
+{
+  [129601] = {
+    icon = "rune",
+    id = 129601,
+    name = "a runic totem"
+  },
+  [251212] = {
+    icon = "shrine",
+    id = 251212,
+    name = "a white marble altar"
+  },
+  [268819] = {
+    id = 268819,
+    name = "a broken skullbone",
+    takeable = true
+  },
+  [292172] = {
+    icon = "lamp",
+    id = 292172,
+    name = "a logosmas stocking"
+  },
+  [316094] = {
+    icon = "shrine",
+    id = 316094,
+    name = "a shrine of Neraeos"
+  },
+  [381143] = {
+    icon = "lamp",
+    id = 381143,
+    name = "a logosmas stocking"
+  }
+}
+```
+
+Item tables can contain the following:
+- id: The Achaea item id
+- name: The name of the item
+- icon: the Achaea icon (used in HTML5 client)
+- container: the item is a container and can hold other items
+- dead: a denizen that is currently a corpse
+- edible: an item that can be eaten
+- fluid: a consumable liquid
+- groupable: an item that can be grouped together
+- loyal: denizens that are loyal to a city (e.g. guards)
+- monster: a denizen (these are always in xdata.items.denizens)
+- riftable: an item that can be placed in the rift
+- takeable: an item on the ground that can be picked up
+- wearable: an item that can be worn but currently isn't
+- wieldleft: an item that is wielded in the left hand
+- wieldright: an item that is wielded in the right hand
+- worn: an item that is wearable and currently worn
