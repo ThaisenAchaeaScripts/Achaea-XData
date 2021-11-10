@@ -325,3 +325,45 @@ xdata.rift uses a few special naming conventions different from the game
 
 ---
 
+
+<a name="xdata_room">**xdata room**</a>
+- Event raised when room information is received, typically when moving or when you LOOK.
+- ARG1 is the contents of xdata.room
+- xdata.room is a table containing information about the room
+```lua
+Event: xdata room
+{
+  areagame = "Cyrene",
+  areaid = 57,
+  areamap = "Cyrene, the City of",
+  description = "The two main thoroughfares of Cyrene meet here, crossing through an expansive 
+plaza surrounding the grassy knoll beneath the city's clocktower. Painted stones of all shapes and 
+sizes mesh in an intricate, two-sided mosaic that spans the Crossing. Brightly coloured scenes of 
+spring mornings, summer afternoons, and autumn evenings adorn the northern half of the area, 
+allowing the clocktower's shadow to mark the passage of time under the light of the sun. To the 
+south, scenes of snowy winter nights and rushing rivers adorn the cobbles, marked by large swathes 
+of pale whites and chill blues. Broken pillars and chunks of shattered stone, carefully placed and 
+smoothed by hand, offer a ring of seating in the grasses beyond the southern edge of the crossing, 
+nestled in the shade of several tall, lush trees that border the area. To the south and west, 
+bustling rows of shops and other commercial buildings are visible, in stark contrast to the 
+picturesque estates lining Bard's way to the north. To the east, the Resistance Bridge rises, 
+allowing passage over the Shuun'eludiela.",
+  environment = "Urban",
+  exitrooms = {
+    east = 6297,
+    in = 18691,
+    north = 6390,
+    south = 6391,
+    west = 6299
+  },
+  exits = { "in", "west", "south", "east", "north" },
+  harbour = false,
+  id = 6298,
+  indoors = false,
+  name = "Centre Crossing",
+  ohmap = false,
+  outdoors = true,
+  shop = false,
+  wilderness = false
+}
+```
