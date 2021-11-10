@@ -7,7 +7,8 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata afflictions gain](#xdata_afflictions_gain)
   - [xdata afflictions lost](#xdata_afflictions_lost)
   - [xdata afflictions miss](#xdata_afflictions_miss)
-
+- comms
+  - [xdata comms](#xdata_comms)
 
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
@@ -53,11 +54,8 @@ Event: xdata afflictions miss
 "paralysis"
 ```
 
-
-
-
 ---
-**xdata comms**
+<a name="xdata_comms">**xdata comms**</a>
 - Event raised when a new communication is recieved.
 - ARG1 contins xdata.comms
 - Variables
