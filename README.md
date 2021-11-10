@@ -22,6 +22,9 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata players](#xdata_players)
   - [xdata players add](#xdata_players_add)
   - [xdata players remove](#xdata_players_remove)
+- rift
+  - [xdata rift](#xdata_rift)
+  - [xdata rift change](#xdata_rift_change)
  
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
@@ -276,6 +279,49 @@ Event: xdata players add
 Event: xdata players remove
 "Ellarose"
 ```
+
+---
+
+<a name="xdata_rift">**xdata rift**</a>
+- Event raised whenever rift contents is received from the game (typically on INR ALL)
+- ARG1 contains the content of xdata.rift
+- xdata.rift is a table where the key is the type of item and the value is the amount in the rift
+
+```lua
+Event: xdata rift
+{
+  alchemical_mercury = 2,
+  alchemical_salt = 25,
+  antimony = 3,
+  argentum = 16,
+  arsenic = 10,
+  ash = 5461,
+  aurum = 40,
+  azurite = 1,
+  bayberry = 5929,
+etc...
+```
+
+
+<a name="xdata_rift_change">**xdata rift change**</a>
+- Event raised whenever rift contents are added or removed
+- ARG1 contains the name of the item
+- ARG2 contains the amount added (negative if items removed)
+- xdata.rift is always updated with new rift totals
+
+```lua
+Event: xdata rift change
+"redink"
+-10
+```
+
+xdata.rift uses a few special naming conventions different from the game
+- elixirs are prefixed with "elixir_"
+- salves are prefixed with "salve_"
+- alchemical ingredients are prefixed with "alchemical_"
+- venoms are prefixed with "venom_"
+- crystals are prefixed with "crystal_"
+- any spaces or non-alpha characters are removed
 
 ---
 
