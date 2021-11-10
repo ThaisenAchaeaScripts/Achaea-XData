@@ -576,3 +576,89 @@ Event: xdata balance gain
 Event: xdata balance lost
 1636569144.509
 ```
+
+<a name="xdata_equilibrium_gain">**xdata equilibrium gain**</a>
+- Event raised when equilibrium is regained
+- ARG1 is the Unix Time that equilibrium was regained
+- ARG2 is the duration it took to regain equilibrium in seconds
+```lua
+Event: xdata equilibrium gain
+1636569632.598
+1.9500000476837
+```
+
+<a name="xdata_equilibrium_lost">**xdata equilibrium lost**</a>
+- Event raised when equilibrium is lost
+- ARG1 is the Unix Time that equilibrium was lost
+```lua
+Event: xdata equilibrium lost
+1636569630.648
+```
+
+<a name="xdata_health_change">**xdata health change**</a>
+- Event raised when health is changed
+- ARG1 is the amount of health lost/gained
+- ARG2 is the percent of health lost/gained
+```lua
+Event: xdata health change
+-83
+-0.013712208822072
+```
+
+<a name="xdata_health_full">**xdata health full**</a>
+- Event raised when health is full
+- No arguments
+```lua
+Event: xdata health full
+```
+
+<a name="xdata_mana_change">**xdata mana change**</a>
+- Event raised when mana is changed
+- ARG1 is the amount of mana lost/gained
+- ARG2 is the percent of mana lost/gained
+```lua
+Event: xdata mana change
+23
+0.0039703089936131
+```
+
+<a name="xdata_mana_full">**xdata mana full**</a>
+- Event raised when mana is full
+- No arguments
+```lua
+Event: xdata mana full
+```
+
+<a name="xdata_endurance_change">**xdata endurance change**</a>
+- Event raised when endurance is changed
+- ARG1 is the amount of endurance lost/gained
+- ARG2 is the percent of endurance lost/gained
+```lua
+Event: xdata endurance change
+200
+0.0075131480090158
+```
+
+<a name="xdata_endurance_full">**xdata endurance full**</a>
+- Event raised when endurance is full
+- No arguments
+```lua
+Event: xdata endurance full
+```
+
+<a name="xdata_willpower_change">**xdata willpower change**</a>
+- Event raised when willpower is changed
+- ARG1 is the amount of willpower lost/gained
+- ARG2 is the percent of willpower lost/gained
+```lua
+Event: xdata willpower change
+-300
+-0.012931034482759
+```
+
+<a name="xdata_willpower_full">**xdata willpower full**</a>
+- Event raised when willpower is full
+- No arguments
+```lua
+Event: xdata willpower full
+```
