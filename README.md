@@ -43,7 +43,23 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata time noon](#xdata_time_noon)
   - [xdata time dusk](#xdata_time_dusk)
   - [xdata time midnight](#xdata_time_midnight)
- 
+
+- vitals
+  - [xdata_vitals](#xdata_vitals)
+  - [xdata balance gain](#xdata_balance_gain)
+  - [xdata balance lost](#xdata_balance_lost)
+  - [xdata equilibrium gain](#xdata_equilibrium_gain)
+  - [xdata equilibrium lost](#xdata_equilibrium_lost)
+  - [xdata health change](#xdata_health_change)
+  - [xdata health full](#xdata_health_full)
+  - [xdata mana change](#xdata_mana_change)
+  - [xdata mana full](#xdata_mana_full)
+  - [xdata endurance change](#xdata_endurance_change)
+  - [xdata endurance full](#xdata_endurance_full)
+  - [xdata willpower change](#xdata_willpower_change)
+  - [xdata willpower full](#xdata_willpower_full)
+
+
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
 - Event raised whenever the Achaea affliction list is recieved on diagnose.
@@ -488,3 +504,75 @@ Event: xdata time midnight
 
 ---
 
+<a name="xdata_vials">**xdata vitals**</a>
+- Event raised when vitals are received, typically every prompt
+- ARG1 contains contents of xdata.vitals
+- xdata.vitals is important information about characters current vitals
+```lua
+Event: xdata vitals
+{
+  balance = true,
+  balance_duration = 0.97000002861023,
+  balance_gain = 1636568310.427,
+  balance_lost = 1636568309.457,
+  bleed = 0,
+  endurance = 5793,
+  endurance_change = 0,
+  endurance_max = 5793,
+  endurance_pct = 1,
+  endurance_pct_change = 0,
+  equilibrium = true,
+  equilibrium_duration = 2.9739999771118,
+  equilibrium_gain = 1636566976.415,
+  equilibrium_lost = 1636566973.441,
+  health = 6053,
+  health_change = 0,
+  health_max = 6053,
+  health_pct = 1,
+  health_pct_change = 0,
+  mana = 5793,
+  mana_change = 0,
+  mana_max = 5793,
+  mana_pct = 1,
+  mana_pct_change = 0,
+  rage = 0,
+  venom = "",
+  willpower = 5793,
+  willpower_change = 0,
+  willpower_max = 5793,
+  willpower_pct = 1,
+  willpower_pct_change = 0
+}
+```
+- balance: variable if you currrently have balance, true or false
+- balance duration: time in seconds it took to gain balance last time
+- balance gain: Unix time when balance was last gained
+- balance lost: Unix time when balance was last lost
+- same varaibles exist for equilibrium
+- health: current health
+- health_max: current maximum health
+- health_change: change in health from last time vitals were received
+- health_pct: current health percentage of maximum health
+- health_pct_change: health change in terms of percentage points
+- same variables exist for mana, endurance and willpower
+- rage: current battlerage amount
+- bleed: current rate of bleeding
+- class specific varaibles (e.g. above in serpent shows the current venom secreted)
+
+<a name="xdata_balance_gain">**xdata balance gain**</a>
+- Event raised when balance is regained
+- ARG1 is the Unix Time that balance was regained
+- ARG2 is the duration it took to regain balance in seconds
+```lua
+Event: xdata balance gain
+1636569145.312
+0.80299997329712
+```
+
+<a name="xdata_balance_lost">**xdata balance lost**</a>
+- Event raised when balance is lost
+- ARG1 is the Unix Time that balance was lost
+```lua
+Event: xdata balance lost
+1636569144.509
+```
