@@ -9,6 +9,10 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata afflictions miss](#xdata_afflictions_miss)
 - comms
   - [xdata comms](#xdata_comms)
+- defences
+  - [xdata defences](#xdata_defences)
+  - [xdata defences gain](#xdata_defences_gain)
+  - [xdata defences lost](#xdata_defences_lost)
 
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
@@ -57,8 +61,7 @@ Event: xdata afflictions miss
 ---
 <a name="xdata_comms">**xdata comms**</a>
 - Event raised when a new communication is recieved.
-- ARG1 contins xdata.comms
-- Variables
+- ARG1 contains xdata.comms
   - ansi: The communication with ANSI color codes, can be used with ansi2deco function in mudlet.
   - channel: The communication channel the message was sent on. ('says','tells','city','house','order',ect)
   - epoch: The unix time that the communction was recieved.
@@ -78,3 +81,39 @@ Event: xdata comms
 }
 ```
 ---
+<a name="xdata_defences">**xdata defences**</a>
+- Event raised whenever the Achaea defences list is recieved on def.
+- ARG1 contains xdata.defences
+- xdata.defences is a table where the defences are keys and the values are true or false
+- If the defence isn't in the table or the value is false then the defence is not present.
+```lua
+Event: xdata defences
+{
+  blindness = true,
+  boartattoo = true,
+  deafness = true,
+  megalithtattoo = true,
+  mindseye = true,
+  moontattoo = true,
+  mosstattoo = true,
+  oxtattoo = true
+}
+```
+
+<a name="xdata_defences_gain">**xdata defences gain**</a>
+- Event raised whenever a new defences has been gained
+- ARG1 is the name of the defences
+- xdata.defences contains full list
+```lua
+Event: xdata defences gain
+"nightsight"
+```
+
+<a name="xdata_defences_lost">**xdata defences lost**</a>
+- Event raised whenever an defences is lost
+- ARG1 is the name of the defences
+- xdata.defences contains full list
+```lua
+Event: xdata defences lost
+"softfocusing"
+```
