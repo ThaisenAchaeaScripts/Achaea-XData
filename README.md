@@ -25,6 +25,8 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
 - rift
   - [xdata rift](#xdata_rift)
   - [xdata rift change](#xdata_rift_change)
+- room
+  - [xdata room](#xdata_room)
  
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
