@@ -207,7 +207,6 @@ Event: xdata items add
 - ARG1 is the location, possible values are 'inv','room','denizens', or 'repXXX' (repXXX is a container where XXX is the container id)
 - ARG2 is a table containing the item information
 - xdata.items.LOCATION is alway updated (e.g. xdata.items.inv or xdata.items.denizens)
-- 
 ```lua
 Event: xdata items remove
 "inv"
@@ -219,3 +218,29 @@ Event: xdata items remove
   riftable = true
 }
 ```
+
+<a name="xdata_items_update">**xdata items update**</a>
+- Event raised whenever an item is updated while in inventory
+- ARG1 is the location, typically only applies to 'inv'
+- ARG2 is a table containing the item information
+- xdata.items.LOCATION is alway updated (e.g. xdata.items.inv)
+```lua
+Event: xdata items update
+"inv"
+{
+  icon = "clothing",
+  id = 575794,
+  name = "a pair of atavian wings",
+  worn = true
+}
+
+Event: xdata items update
+"inv"
+{
+  icon = "clothing",
+  id = 575794,
+  name = "a pair of atavian wings",
+  wearable = true
+}
+```
+
