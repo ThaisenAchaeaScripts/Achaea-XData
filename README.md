@@ -12,7 +12,6 @@ Modeules
 - ARG1 contains xdata.afflications
 - xdata.afflictions is a table where the afflictions are keys and the values are the unix time when the affliction was recieved.
 - If the affliction isn't in the table or the value is 0 then the affliction is not present.
-
 ```lua
 Event: xdata afflictions
 {
@@ -25,7 +24,7 @@ Event: xdata afflictions
 **xdata afflictions gain**
 - Event raised whenever a new affliction has been gained
 - ARG1 is the name of the affliction
-
+- xdata.afflictions contains full list
 ```lua
 Event: xdata afflictions gain
 "paralysis"
@@ -35,12 +34,23 @@ Event: xdata afflictions gain
 - Event raised whenever an affliction is lost
 - ARG1 is the name of the affliction
 - ARG2 is the time in seconds since the affliction was initially gained
-
+- xdata.afflictions contains full list
 ```lua
 Event: xdata afflictions lost
 "paralysis"
 4.0320000648499
 ```
+
+**xdata affliction miss**
+- Event raised whenever an affliction is cured that xdata didn't already know about
+- ARG1 is the name of the affliction
+- xdata afflictions lost is always raised at the same time
+```lua
+Event: xdata afflictions miss
+"paralysis"
+```
+
+
 
 
 ---
