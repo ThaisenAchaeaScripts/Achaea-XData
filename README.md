@@ -27,6 +27,9 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata rift change](#xdata_rift_change)
 - room
   - [xdata room](#xdata_room)
+- status
+  - [xdata status](#xdata_status)
+  - [xdata gold](#xdata_gold)
  
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
@@ -369,3 +372,49 @@ allowing passage over the Shuun'eludiela.",
   wilderness = false
 }
 ```
+
+---
+<a name="xdata_status">**xdata stats**</a>
+- Event raised when status information changes or player requests via STAT
+- ARG1 contains xdata.status
+- xdata.status is a table containing information about the character
+```lua
+Event: xdata status
+{
+  age = 124,
+  city = "Cyrene",
+  cityrank = 6,
+  class = "Serpent",
+  credits = { 162, 222 },
+  explorerrank = "an Achaean Ranger, 2nd Class",
+  gender = "male",
+  gold = { 540915, 507894, 1048809 },
+  house = "The Grand Merchant Collective",
+  houserank = 3,
+  lessons = 1249,
+  level = 114,
+  levelnext = 66.7,
+  levelxp = 33.3,
+  name = "Thaisen",
+  namefull = "Thaisen Vorondil-Lanthe, Merchant Intern",
+  nameprefix = "",
+  namesuffix = "Vorondil-Lanthe, Merchant Intern",
+  order = "(None)",
+  race = "Human",
+  racefull = "Human Rogue",
+  racespec = "Rogue",
+  unread_msgs = 0,
+  unread_news = 0
+}
+```
+Differences from GMCP
+- credits is a table {unbound, bound} (e.g. xdata.status.credits[1] = number of unbound credits)
+- gold is a table {inv,bank,total} (e.g. xdata.status.gold[2] = amount of gold in the bank)
+- cityrank and houserank are their own variables
+- level is split into level, levelxp, and levelnext
+- race is split into race, racespec and racefull
+- name is split into name, namefull, nameprefix and namesuffix
+
+---
+
+
