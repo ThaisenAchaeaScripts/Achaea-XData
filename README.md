@@ -19,9 +19,9 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata items remove](#xdata_items_remove)
   - [xdata items update](#xdata_items_update)
 - players
-  -[xdata players](#xdata_players)
-  -[xdata players add](#xdata_players_add)
-  -[xdata players remove](#xdata_players_remove)
+  - [xdata players](#xdata_players)
+  - [xdata players add](#xdata_players_add)
+  - [xdata players remove](#xdata_players_remove)
  
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
