@@ -1,4 +1,4 @@
-# Achaea-XData
+# Achaea XData
 
 XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by maintaining local variables and raising additional events.
 
@@ -18,6 +18,10 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata items add](#xdata_items_add)
   - [xdata items remove](#xdata_items_remove)
   - [xdata items update](#xdata_items_update)
+- players
+  -[xdata players](#xdata_players)
+  -[xdata players add](#xdata_players_add)
+  -[xdata players remove](#xdata_players_remove)
  
 ---
 <a name="xdata_afflictions">**xdata afflictions**</a>
@@ -243,4 +247,35 @@ Event: xdata items update
   wearable = true
 }
 ```
+
+---
+
+<a name="xdata_players">**xdata players**</a>
+- Event raised whenever the players in the current room changes
+- ARG1 contains xdata.players
+- xdata.players is a table containing the player names
+```lua
+Event: xdata players
+{ "Aeldir", "Ellarose", "Thaisen" }
+```
+
+<a name="xdata_players_add">**xdata players add**</a>
+- Event raised whenever a new player is added to the room
+- ARG1 contains the player name
+- xdata.players is always updated
+```lua
+Event: xdata players add
+"Aeldir"
+```
+
+<a name="xdata_players_remove">**xdata players remove**</a>
+- Event raised whenever a new player is removed from the room
+- ARG1 contains the player name
+- xdata.players is always updated
+```lua
+Event: xdata players remove
+"Ellarose"
+```
+
+---
 
