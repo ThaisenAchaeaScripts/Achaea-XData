@@ -10,6 +10,8 @@ Modeules
 **xdata afflictions**
 - Event raised whenever the Achaea affliction list is recieved on diagnose.
 - ARG1 contains xdata.afflications
+- xdata.afflictions is a table where the afflictions are keys and the values are the unix time when the affliction was recieved.
+- If the affliction isn't in the table or the value is 0 then the affliction is not present.
 
 ```lua
 Event: xdata afflictions
@@ -18,6 +20,26 @@ Event: xdata afflictions
   deafness = 1636558699.754,
   paralysis = 1636558699.754
 }
+```
+
+**xdata afflictions gain**
+- Event raised whenever a new affliction has been gained
+- ARG1 is the name of the affliction
+
+```lua
+Event: xdata afflictions gain
+"paralysis"
+```
+
+**xdata afflictions lost**
+- Event raised whenever an affliction is lost
+- ARG1 is the name of the affliction
+- ARG2 is the time in seconds since the affliction was initially gained
+
+```lua
+Event: xdata afflictions lost
+"paralysis"
+4.0320000648499
 ```
 
 
