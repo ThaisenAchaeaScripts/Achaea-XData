@@ -14,10 +14,7 @@ XData is a mudlet package aimed to make it easier to consume Achaea GMCP data by
   - [xdata defences gain](#xdata_defences_gain)
   - [xdata defences lost](#xdata_defences_lost)
 - items
-  - [xdata items inv](#xdata_items_inv)
-  - [xdata items room](#xdata_items_room)
-  - [xdata items denizens](#xdata_items_denizens)
-  - [xdata items repXXX](#xdata_items_repXXX)
+  - [xdata items](#xdata_items)
   - [xdata items add](#xdata_items_add)
   - [xdata items remove](#xdata_items_remove)
   - [xdata items update](#xdata_items_update)
@@ -188,3 +185,37 @@ Item tables can contain the following:
 - wieldleft: an item that is wielded in the left hand
 - wieldright: an item that is wielded in the right hand
 - worn: an item that is wearable and currently worn
+
+<a name="xdata_items_add">**xdata items add**</a>
+- Event raised whenever an item is removed from a location
+- ARG1 is the location, possible values are 'inv','room','denizens', or 'repXXX' (repXXX is a container where XXX is the container id)
+- ARG2 is a table containing the item information
+- xdata.items.LOCATION is alway updated (e.g. xdata.items.inv or xdata.items.denizens)
+```lua
+Event: xdata items add
+"denizens"
+{
+  icon = "animal",
+  id = 36453,
+  monster = true,
+  name = "a blackbird"
+}
+```
+
+<a name="xdata_items_remove">**xdata items remove**</a>
+- Event raised whenever an item is removed from a location
+- ARG1 is the location, possible values are 'inv','room','denizens', or 'repXXX' (repXXX is a container where XXX is the container id)
+- ARG2 is a table containing the item information
+- xdata.items.LOCATION is alway updated (e.g. xdata.items.inv or xdata.items.denizens)
+- 
+```lua
+Event: xdata items remove
+"inv"
+{
+  groupable = true,
+  icon = "commodity",
+  id = 244061,
+  name = "a piece of stag's horn",
+  riftable = true
+}
+```
