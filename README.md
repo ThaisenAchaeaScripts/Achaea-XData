@@ -4,10 +4,14 @@ XData is a mudlet package to make it easier to consume Achaea GMCP data by maint
 
 Modeules
 - afflictions
+  - [xdata afflictions](#xdata_afflictions)
+  - [xdata afflictions gain](#xdata_afflictions_gain)
+  - xdata afflictions lost
+  - xdata afflictions miss
 
 
 ---
-**xdata afflictions**
+<a name="xdata_afflictions">**xdata afflictions**</a>
 - Event raised whenever the Achaea affliction list is recieved on diagnose.
 - ARG1 contains xdata.afflications
 - xdata.afflictions is a table where the afflictions are keys and the values are the unix time when the affliction was recieved.
@@ -21,7 +25,7 @@ Event: xdata afflictions
 }
 ```
 
-**xdata afflictions gain**
+<a name="xdata_afflictions_gain">**xdata afflictions gain**</a>
 - Event raised whenever a new affliction has been gained
 - ARG1 is the name of the affliction
 - xdata.afflictions contains full list
